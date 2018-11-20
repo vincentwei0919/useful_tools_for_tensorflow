@@ -47,6 +47,8 @@ if __name__ == '__main__':
     label_list = []
     with open(txt_path, 'r') as f:
         lines = f.readlines()
+        # 如果数据没有经过打乱，那么在这步对列表进行打乱，原地打乱，没有返回值
+        random.shuffle(lines)
         for line in lines:
             splited = line.strip().split(' ')
             img_name = splited[0]
@@ -54,16 +56,4 @@ if __name__ == '__main__':
             image_list.append(img_name)
             label_list.append(label)
     # 传入两个list， 便于下步对其进行索引
-    # 如果数据没有经过打乱，那么在这步对列表进行打乱，原地打乱，没有返回值
-    random.shuffle(label_list)
     convert1(image_list,label_list, tfrecord_name, tfrecord_save_path)
-
-
-
-
-
-
-
-
-
-
