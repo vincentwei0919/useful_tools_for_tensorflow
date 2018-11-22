@@ -1,5 +1,11 @@
 #coding:utf-8
 
+"""
+代码借鉴自下面大神的博客，并根据自身任务进行了修改。
+：https://www.cnblogs.com/zyly/p/9146787.html
+
+"""
+
 import tensorflow as tf
 import numpy as np
 import os
@@ -12,15 +18,15 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
     1.设置参数，并加载数据
 '''
 # 用于保存微调后的检查点文件和日志文件路径
-train_log_dir= '/home/train_log1/'
-test_log_dir = '/home/test_log1/'
+train_log_dir= '训练日志路径'
+test_log_dir = '测试日志路径'
 #训练好的模型保存路径
-save_model_path = '/home/model_1/porn_model.ckpt'
+save_model_path = '训练之后模型的保存路径'
 
 # 官方下载的检查点文件路径
-checkpoint_file = '/home/detect/vgg_16.ckpt'
-train_record_path = '/home/detect/train.tfrecords'
-test_record_path = '/home/detect/test.tfrecords'
+checkpoint_file = '.../vgg_16.ckpt'
+train_record_path = '.../train.tfrecords'
+test_record_path = '.../test.tfrecords'
 # 设置训练参数
 num_classes = 2
 batch_size = 64
